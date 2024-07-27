@@ -1,8 +1,12 @@
+import { Container } from "@mui/material";
 import PostList from "./posts/page";
 
 
 const Index = () => (
-  <PostList/>
+  <Container>
+    <PostList />
+  </Container>
+
 );
 
 export default Index;

@@ -39,7 +39,7 @@ const PostDetail = async ({ params }: { params: { id: string } }) => {
 
     return (
         <Container>
-            <Typography variant="h4" gutterBottom>
+            <Typography variant="h3" align="center">
                 Detalles de la Publicación
             </Typography>
             <PostCardDetails

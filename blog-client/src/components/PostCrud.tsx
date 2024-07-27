@@ -3,8 +3,10 @@
 import { Button, Container, TextField, Typography } from "@mui/material";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
+import "./Components.css"
 
-const PostCrud :React.FC = () => {
+
+const PostCrud: React.FC = () => {
     const [title, setTitle] = useState<string>('');
     const [content, setContent] = useState<string>('');
     const [author, setAuthor] = useState<string>('');
@@ -38,7 +40,7 @@ const PostCrud :React.FC = () => {
     };
 
 
-    return (  
+    return (
         <Container>
             <Typography variant="h4" gutterBottom>
                 Nueva Publicación
@@ -70,9 +72,14 @@ const PostCrud :React.FC = () => {
                     value={author}
                     onChange={(e) => setAuthor(e.target.value)}
                 />
-                <Button type="submit" variant="contained" color="primary">
-                    Publicar
-                </Button>
+                <div className="button-container">
+                    <Button className="share" type="submit" variant="contained" color="primary">
+                        Publicar
+                    </Button>
+                    <Button className="cancel" href="/" variant="contained" color="primary">
+                        Cancelar
+                    </Button>
+                </div>
             </form>
         </Container>
     );

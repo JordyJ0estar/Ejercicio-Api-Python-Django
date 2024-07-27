@@ -38,9 +38,6 @@ const PostList = () => {
 
     return (
         <Container>
-            <Typography align="center" variant="h5" gutterBottom>
-                Ejercicio Python con Django usando API
-            </Typography>
             <Typography variant="h4" gutterBottom>
                 Publicaciones
             </Typography>
