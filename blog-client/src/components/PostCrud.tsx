@@ -10,12 +10,28 @@ const PostCrud: React.FC = () => {
     const [title, setTitle] = useState<string>('');
     const [content, setContent] = useState<string>('');
     const [author, setAuthor] = useState<string>('');
+    const [errors, setErrors] = useState<{ [key: string]: string }>({});
     const router = useRouter();
+
+    const validateForm = () => {
+        const newErrors: { [key: string]: string } = {};
+        if (title.trim() === '') newErrors.title = 'El título es obligatorio.';
+        if (content.trim() === '') newErrors.content = 'El contenido es obligatorio.';
+        if (author.trim() === '') newErrors.author = 'El autor es obligatorio.';
+        setErrors(newErrors);
+        return Object.keys(newErrors).length === 0;
+    };
 
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        console.log('Form submitted', { title, content, author });
+
+        if (!validateForm()) {
+            return;
+        }
+
+
+       
 
         try {
             const response = await fetch('http://127.0.0.1:8000/api/posts/', {
@@ -27,7 +43,6 @@ const PostCrud: React.FC = () => {
             });
 
             if (response.ok) {
-                console.log('Post created successfully');
                 router.push('/');
             } else {
                 console.error('Failed to create post');
@@ -41,8 +56,8 @@ const PostCrud: React.FC = () => {
 
 
     return (
-        <Container>
-            <Typography variant="h4" gutterBottom>
+        <Container sx={{ paddingTop: "2%", height: 400, width: 600 }} >
+            <Typography variant="h4" gutterBottom align="center">
                 Nueva Publicación
             </Typography>
             <form onSubmit={handleSubmit}>
@@ -53,6 +68,9 @@ const PostCrud: React.FC = () => {
                     margin="normal"
                     value={title}
                     onChange={(e) => setTitle(e.target.value)}
+                    error={!!errors.title}
+                    helperText={errors.title}
+                    className="texFields"
                 />
                 <TextField
                     label="Contenido"
@@ -63,6 +81,9 @@ const PostCrud: React.FC = () => {
                     rows={4}
                     value={content}
                     onChange={(e) => setContent(e.target.value)}
+                    error={!!errors.content}
+                    helperText={errors.content}
+                    className="texFields"
                 />
                 <TextField
                     label="Autor"
@@ -71,6 +92,9 @@ const PostCrud: React.FC = () => {
                     margin="normal"
                     value={author}
                     onChange={(e) => setAuthor(e.target.value)}
+                    error={!!errors.author}
+                    helperText={errors.author}
+                    className="texFields"
                 />
                 <div className="button-container">
                     <Button className="share" type="submit" variant="contained" color="primary">
