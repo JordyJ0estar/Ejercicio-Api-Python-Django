@@ -56,8 +56,8 @@ const PostCrud: React.FC = () => {
 
 
     return (
-        <Container sx={{ paddingTop: "2%", height: 400, width: 600 }} >
-            <Typography variant="h4" gutterBottom align="center">
+        <Container className="formContainer" sx={{ height: "fit-content", width: 600 }} >
+            <Typography variant="h4" gutterBottom align="center" sx={{paddingTop:"2%"}}>
                 Nueva Publicación
             </Typography>
             <form onSubmit={handleSubmit}>

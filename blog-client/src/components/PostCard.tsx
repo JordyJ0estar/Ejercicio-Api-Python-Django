@@ -11,7 +11,7 @@ interface PostCardProps {
 const PostCard: React.FC<PostCardProps> = ({ id, title }) => {
     return (
         <Link href={`/posts/${id}`} passHref>
-            <Card variant="outlined" style={{ margin: '1rem 0', cursor: 'pointer' }}>
+            <Card variant="outlined" className="contentList" style={{ margin: '1rem 0', cursor: 'pointer' }}>
                 <CardContent>
                     <Typography variant="h5">{title.toUpperCase()}</Typography>
                 </CardContent>

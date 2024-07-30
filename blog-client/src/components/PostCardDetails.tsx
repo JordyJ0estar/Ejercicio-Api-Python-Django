@@ -11,7 +11,7 @@ interface PostCardDetailsProps {
 const PostCardDetails: React.FC<PostCardDetailsProps> = ({ title, content, author }) => (
     <Container className="mainContainer">
 
-        <Card variant="outlined" sx={{ height: 400, width: 600 }} >
+        <Card className="ContentCard" variant="outlined" sx={{ height: 400, width: 600 }} >
             <CardContent>
                 <Typography variant="h4" gutterBottom >
                     Titulo: {title.toUpperCase()}

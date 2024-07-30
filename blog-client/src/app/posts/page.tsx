@@ -38,7 +38,7 @@ const PostList = () => {
 
     return (
         <Container sx={{ paddingTop:"2%", height: 400, width: 600 }} >
-            <Typography variant="h4" align="center" sx={{paddingTop:"2%"}} > 
+            <Typography variant="h4" align="center" sx={{paddingTop:"2%", paddingBottom:"2%"}} > 
                 Publicaciones
             </Typography>
             {posts.map((post: Post) => (
