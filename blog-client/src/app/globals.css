@@ -1,6 +1,7 @@
 body{
     background-color: #ffffff;
     padding-top: 2%;
+    background-image: linear-gradient(to right, #CE0E2D , #ffc4d5);
 }
 .containerDetails{
     background-color: white;
