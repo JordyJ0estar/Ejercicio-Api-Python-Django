@@ -1,4 +1,4 @@
-import { Container, Typography } from "@mui/material";
+import { Button, Container, Typography } from "@mui/material";
 import PostCardDetails from "@/components/PostCardDetails";
 
 interface Post {
@@ -32,24 +32,31 @@ const PostDetail = async ({ params }: { params: { id: string } }) => {
     if (!post) {
         return (
             <Container>
-                <Typography variant="h5">Publicación no encontrada.</Typography>
+                <Typography variant="h4">Publicación no encontrada.</Typography>
             </Container>
         );
     }
 
     return (
         <Container>
-            <Typography variant="h3" align="center">
+            <Typography variant="h4" align="center">
                 Detalles de la Publicación
             </Typography>
             <PostCardDetails
                 title={post.title}
                 content={post.content}
                 author={post.author}
+
             />
-            <Typography variant="subtitle2" color="textSecondary">
+            <Typography variant="subtitle2" color="textSecondary" align="center" >
                 Fecha de Creación: {new Date(post.created_at).toLocaleDateString()}
             </Typography>
+            <div className="button-container">
+
+                <Button href="/" variant="contained" color="primary">
+                    Volver
+                </Button>
+            </div>
         </Container>
     );
 };
