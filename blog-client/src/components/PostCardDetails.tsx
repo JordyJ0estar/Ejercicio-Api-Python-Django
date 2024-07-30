@@ -1,5 +1,6 @@
 import { Card, CardContent, Container, Typography } from "@mui/material";
 import React from "react";
+import "./Components.css"
 
 interface PostCardDetailsProps {
     title: string;
@@ -8,16 +9,17 @@ interface PostCardDetailsProps {
 }
 
 const PostCardDetails: React.FC<PostCardDetailsProps> = ({ title, content, author }) => (
-    <Container>
-        <Typography variant="h4" gutterBottom >
-           Titulo: {title.toUpperCase()}
-        </Typography>
-        <Card variant="outlined"  sx={{ height: 300 ,width:400 }} >
+    <Container className="mainContainer">
+
+        <Card variant="outlined" sx={{ height: 400, width: 600 }} >
             <CardContent>
+                <Typography variant="h4" gutterBottom >
+                    Titulo: {title.toUpperCase()}
+                </Typography>
                 <Typography variant="body1" paragraph>
                     - {content}
                 </Typography>
-                <Typography variant="subtitle1" color="textSecondary">
+                <Typography variant="subtitle1" color="textSecondary" >
                     Autor: {author.toUpperCase()}
                 </Typography>
             </CardContent>
