@@ -1,12 +1,18 @@
 .button-container {
     display: flex;
     justify-content: center;
+    padding-bottom: 2%;
+    padding-top: 2%;
 
 }
 
 .button-container .cancel {
     background-color: red;
     margin-left: 1%;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+.button-container .share{
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
 .title {
@@ -29,5 +35,25 @@
     padding-top: 2%;
     display:flex;
     justify-content:center;
+    
+    
 
+}
+.formContainer{
+    border: 2px solid rgb(7, 1, 1);
+    padding: 20px 10px 1000px auto !important;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    height: 400;
+    width: 600;
+}
+
+.ContentCard{
+    border-radius: 2px solid rgb(7, 1, 1);
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+.contentList{
+    border-radius: 8px;
+    border-radius: 2px solid rgb(7, 1, 1);
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
