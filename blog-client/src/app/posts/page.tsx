@@ -37,16 +37,18 @@ const PostList = () => {
     }
 
     return (
-        <Container>
-            <Typography variant="h4" gutterBottom>
+        <Container sx={{ paddingTop:"2%", height: 400, width: 600 }} >
+            <Typography variant="h4" align="center" sx={{paddingTop:"2%"}} > 
                 Publicaciones
             </Typography>
             {posts.map((post: Post) => (
                 <PostCard key={post.id} id={post.id} title={post.title} />
             ))}
-            <Button variant="contained" color="primary" href="/posts/create">
+            <div className="button-container">
+            <Button variant="contained" color="primary" href="/posts/create" >
                 Crear Publicación
             </Button>
+            </div>
         </Container>
     );
 };
